@@ -138,6 +138,16 @@
             text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
         }
 
+        /* 页脚 */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
         /* 导航按钮 */
         .nav-buttons {
             display: flex;
@@ -210,18 +220,24 @@
     <!-- 第一屏：隐私政策与导航 -->
     <section id="home">
         
-        <!-- 状态指示器（已去掉后缀） -->
         <div class="status-badge">
             <div class="status-dot"></div>
-            System Online
+            System Online - EosTest
         </div>
-
-        <!-- 隐私政策卡片 -->
+        
+        <!-- 修复：将文字包裹在毛玻璃卡片内 -->
         <div class="privacy-box">
             <h2>Privacy Policy</h2>
+            
             <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
+            
             <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
+            
             <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
+            
+            <div class="footer">
+                Last Updated: 2026 &copy; EosTest Dev Team
+            </div>
         </div>
 
         <!-- 跳转按钮 -->
