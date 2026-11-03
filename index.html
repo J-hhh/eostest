@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EosTest - Official Portal</title>
     <style>
-        /* Base Setup & Smooth Scrolling */
+        /* 基础设置与平滑滚动 */
         html {
             scroll-behavior: smooth; 
         }
@@ -112,7 +112,7 @@
         }
 
         /* 霓虹发光标题 */
-        .privacy-box h2 {
+        .privacy-box h1 {
             color: #fff;
             font-size: 2.2rem;
             text-transform: uppercase;
@@ -140,7 +140,7 @@
 
         /* 页脚 */
         .footer {
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 0.85rem;
             color: #555;
             text-align: right;
@@ -154,6 +154,7 @@
             gap: 20px;
             flex-wrap: wrap; 
             justify-content: center;
+            z-index: 10;
         }
         .btn {
             text-decoration: none;
@@ -220,19 +221,17 @@
     <!-- 第一屏：隐私政策与导航 -->
     <section id="home">
         
+        <!-- 状态指示器 -->
         <div class="status-badge">
             <div class="status-dot"></div>
             System Online - EosTest
         </div>
-        
-        <!-- 修复：将文字包裹在毛玻璃卡片内 -->
+
+        <!-- 隐私政策毛玻璃卡片 -->
         <div class="privacy-box">
-            <h2>Privacy Policy</h2>
-            
+            <h1>Privacy Policy</h1>
             <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
-            
             <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
-            
             <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
             
             <div class="footer">
