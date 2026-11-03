@@ -1,2 +1,164 @@
-<h1>Privacy Policy</h1>
-<p>This is a test app. We do not collect or store any personal data.</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EosTest - Privacy Policy</title>
+    <style>
+        /* 基础重置与全屏背景 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0d12;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* 动态科技感背景（缓慢移动的光晕） */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            z-index: -1;
+            animation: moveGlow 10s infinite alternate ease-in-out;
+        }
+        .bg-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+            bottom: -100px;
+            right: -100px;
+            z-index: -1;
+            animation: moveGlow 12s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes moveGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        /* 毛玻璃卡片主体 */
+        .container {
+            max-width: 650px;
+            width: 90%;
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            /* 入场动画 */
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 霓虹标题 */
+        h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        /* 正文样式 */
+        p {
+            line-height: 1.8;
+            color: #b0b0b8;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        /* 高亮文字 */
+        .highlight {
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        /* 极简状态角标 */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            color: #00ffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00ffff;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #00ffff;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 背景光晕 -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- 主内容区 -->
+    <div class="container">
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            System Online - EosTest
+        </div>
+        
+        <h1>Privacy Policy</h1>
+        
+        <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
+        
+        <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
+        
+        <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
+        
+        <div class="footer">
+            Last Updated: 2026 &copy; EosTest Dev Team
+        </div>
+    </div>
+
+</body>
+</html>
