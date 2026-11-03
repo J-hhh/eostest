@@ -13,17 +13,17 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d12;
+            background-color: #07070a; /* 更深邃的背景色 */
             color: #e0e0e0;
             overflow-x: hidden;
         }
 
-        /* Background Glow */
+        /* 动态光晕背景 (恢复第一版效果) */
         .bg-glow {
             position: fixed;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
             top: -100px;
             left: -100px;
             z-index: -1;
@@ -33,7 +33,7 @@
             position: fixed;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
             bottom: -100px;
             right: -100px;
             z-index: -1;
@@ -55,18 +55,22 @@
             box-sizing: border-box;
         }
 
-        /* First Screen: Privacy (Original Style) */
+        /* First Screen */
         #home {
             text-align: center;
         }
+        
+        /* 霓虹标题 (恢复第一版效果) */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.3);
             margin-bottom: 10px;
         }
+
+        /* 动态系统徽章 */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -76,7 +80,7 @@
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .status-dot {
             width: 8px;
@@ -93,25 +97,38 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
 
-        /* Privacy Text Box (Simple & Clean) */
-        .privacy-box {
-            max-width: 600px;
+        /* 毛玻璃卡片通用样式 (加深了阴影和发光边框) */
+        .glass-box {
+            max-width: 650px;
+            width: 90%;
             background: rgba(20, 20, 25, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 255, 0.15); /* 青色微光边框 */
             border-radius: 16px;
             padding: 40px;
-            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 255, 255, 0.05); /* 外部阴影 + 内部微光 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* 鼠标悬停时卡片立体浮起并发光 */
+        .glass-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .privacy-box {
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 50px;
         }
         .privacy-box h2 {
             color: #fff;
             font-size: 1.8rem;
             margin-top: 0;
-            margin-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 15px;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
         }
         .privacy-box p {
             line-height: 1.8;
@@ -119,11 +136,11 @@
             font-size: 1.05rem;
             margin-bottom: 15px;
         }
-        .privacy-box p:last-child {
-            margin-bottom: 0;
+        .privacy-box strong {
+            color: #00ffff; /* 高亮重点词 */
         }
 
-        /* Navigation Buttons */
+        /* 按钮组 */
         .nav-buttons {
             display: flex;
             gap: 20px;
@@ -142,31 +159,26 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
             backdrop-filter: blur(4px);
-            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         .btn:hover {
             background: rgba(0, 255, 255, 0.2);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transform: translateY(-3px) scale(1.05); /* 悬浮放大 */
+            color: #fff;
         }
 
-        /* Content Cards */
+        /* 其他内容卡片 */
         .card {
             max-width: 800px;
-            width: 90%;
-            background: rgba(20, 20, 25, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            text-align: left;
         }
         .card h2 {
             color: #fff;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 15px;
             margin-top: 0;
-            text-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.6); /* 紫色霓虹阴影 */
         }
         .card p {
             line-height: 1.8;
@@ -174,36 +186,44 @@
             font-size: 1.05rem;
         }
 
-        /* Back to Top */
+        /* 返回顶部 */
         .back-top {
             display: inline-block;
             margin-top: 30px;
-            color: #555;
+            color: #666;
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
         }
-        .back-top:hover { color: #fff; }
+        .back-top:hover { 
+            color: #00ffff; 
+            background: rgba(0, 255, 255, 0.1);
+            border-color: rgba(0, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Background Effects -->
+    <!-- 动态光晕 -->
     <div class="bg-glow"></div>
     <div class="bg-glow-2"></div>
 
-    <!-- First Screen: Privacy Policy & Navigation -->
+    <!-- 首屏：隐私政策与导航 -->
     <section id="home">
         
-        <!-- 最初版的纯文本隐私政策 -->
-        <div class="privacy-box">
+        <!-- 隐私条款毛玻璃卡片 -->
+        <div class="glass-box privacy-box">
             <h2>Privacy Policy</h2>
             <p>Welcome to the <strong>EosTest</strong> network portal. This environment is strictly for internal development and testing purposes.</p>
             <p>We believe in absolute data minimalism. Our systems <strong>do not collect, store, or track any personal data</strong>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
             <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
         </div>
 
-        <!-- Jump Buttons -->
+        <!-- 平滑跳转按钮 -->
         <div class="nav-buttons">
             <a href="#products" class="btn">Products</a>
             <a href="#about" class="btn">About Us</a>
@@ -211,9 +231,9 @@
         </div>
     </section>
 
-    <!-- Second Screen: Products -->
+    <!-- 第二屏：产品介绍 -->
     <section id="products">
-        <div class="card">
+        <div class="glass-box card">
             <h2>Products (In Development)</h2>
             <p>We are currently building powerful, next-generation tools designed to make logic editing more intuitive, flexible, and robust.</p>
             <p>Our focus is on delivering a seamless and highly efficient visual programming experience, empowering creators to build complex systems with ease. Stay tuned for more updates.</p>
@@ -221,9 +241,9 @@
         <a href="#home" class="back-top">↑ Back to Top</a>
     </section>
 
-    <!-- Third Screen: About Us -->
+    <!-- 第三屏：关于我们 -->
     <section id="about">
-        <div class="card">
+        <div class="glass-box card">
             <h2>About Us</h2>
             <p>We are an independent development team driven by a passion for creating exceptional tools and experiences.</p>
             <p>If you are interested in our work, have any questions, or would like to collaborate, please feel free to reach out to us. We are always open to connecting with fellow creators.</p>
@@ -231,9 +251,9 @@
         <a href="#home" class="back-top">↑ Back to Top</a>
     </section>
 
-    <!-- Fourth Screen: Contact -->
+    <!-- 第四屏：联系我们 -->
     <section id="contact">
-        <div class="card">
+        <div class="glass-box card">
             <h2>Contact</h2>
             <p>If you have any questions about the project or want to join the playtest, feel free to contact us.</p>
             <p><strong>Email:</strong> contact@fith.online</p>
