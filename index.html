@@ -1,164 +1,300 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EosTest - Privacy Policy</title>
+    <title>Privacy Policy - EosTest</title>
     <style>
-        /* 基础重置与全屏背景 */
-        body, html {
+        /* 基础设置与平滑滚动 */
+        html {
+            scroll-behavior: smooth; 
+        }
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0d0d12;
             color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* 动态科技感背景（缓慢移动的光晕） */
+        /* 动态呼吸光晕背景（让纯黑的背景不那么死板） */
         .bg-glow {
-            position: absolute;
+            position: fixed;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.08) 0%, transparent 70%);
             top: -100px;
             left: -100px;
             z-index: -1;
             animation: moveGlow 10s infinite alternate ease-in-out;
         }
         .bg-glow-2 {
-            position: absolute;
+            position: fixed;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, transparent 70%);
             bottom: -100px;
             right: -100px;
             z-index: -1;
             animation: moveGlow 12s infinite alternate-reverse ease-in-out;
         }
-
         @keyframes moveGlow {
             0% { transform: translate(0, 0); }
             100% { transform: translate(100px, 100px); }
         }
 
-        /* 毛玻璃卡片主体 */
-        .container {
-            max-width: 650px;
+        /* 区块通用设置 */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           第一屏：100% 纯粹的隐私政策（完美复刻最初版）
+           ========================================= */
+        #home {
+            text-align: left; /* 回归最初版的左对齐 */
+        }
+
+        /* 状态指示器居中放置 */
+        .status-container {
             width: 90%;
-            background: rgba(20, 20, 25, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            /* 入场动画 */
-            animation: fadeUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* 霓虹标题 */
-        h1 {
-            font-size: 2.2rem;
-            margin-top: 0;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 15px;
-        }
-
-        /* 正文样式 */
-        p {
-            line-height: 1.8;
-            color: #b0b0b8;
-            font-size: 1.05rem;
+            max-width: 650px;
+            display: flex;
+            justify-content: flex-start;
             margin-bottom: 20px;
         }
-
-        /* 高亮文字 */
-        .highlight {
-            color: #00ffff;
-            font-weight: bold;
-        }
-
-        /* 极简状态角标 */
         .status-badge {
             display: inline-flex;
             align-items: center;
             background: rgba(0, 255, 255, 0.1);
             border: 1px solid rgba(0, 255, 255, 0.3);
             color: #00ffff;
-            padding: 6px 12px;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-bottom: 30px;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
         }
-
         .status-dot {
             width: 8px;
             height: 8px;
             background-color: #00ffff;
             border-radius: 50%;
-            margin-right: 8px;
+            margin-right: 10px;
             box-shadow: 0 0 8px #00ffff;
             animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
 
-        /* 页脚 */
+        /* 纯文本容器（不加卡片背景，完全还原最初版） */
+        .privacy-content {
+            max-width: 650px;
+            width: 90%;
+        }
+        .privacy-content h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+        .privacy-content p {
+            line-height: 1.8;
+            color: #b0b0b8;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+        .highlight { 
+            color: #00ffff; 
+            font-weight: bold;
+        }
         .footer {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.85rem;
             color: #555;
-            text-align: right;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
         }
+
+        /* 下滑提示箭头 */
+        .scroll-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #444;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        /* =========================================
+           第二屏：隐藏的炫酷门户导航（下滑才看得到）
+           ========================================= */
+        #portal {
+            background: linear-gradient(180deg, #0d0d12 0%, #151520 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* 导航按钮 */
+        .nav-buttons {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap; 
+            justify-content: center;
+            animation: fadeUp 1s ease-out forwards;
+        }
+        .btn {
+            text-decoration: none;
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================
+           其他内容屏（产品、关于、联系）
+           ========================================= */
+        .card {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(20, 20, 25, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        .card h2 {
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-top: 0;
+            text-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+        }
+        .card p {
+            line-height: 1.8;
+            color: #b0b0b8;
+            font-size: 1.05rem;
+        }
+
+        /* 返回顶部 */
+        .back-top {
+            display: inline-block;
+            margin-top: 30px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .back-top:hover { color: #fff; }
+
     </style>
 </head>
 <body>
 
-    <!-- 背景光晕 -->
+    <!-- 动态背景光晕 -->
     <div class="bg-glow"></div>
     <div class="bg-glow-2"></div>
 
-    <!-- 主内容区 -->
-    <div class="container">
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            System Online - EosTest
+    <!-- 第一屏：纯粹的隐私政策 -->
+    <section id="home">
+        <div class="status-container">
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                System Online - EosTest
+            </div>
         </div>
-        
-        <h1>Privacy Policy</h1>
-        
-        <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
-        
-        <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
-        
-        <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
-        
-        <div class="footer">
-            Last Updated: 2026 &copy; EosTest Dev Team
+
+        <div class="privacy-content">
+            <h1>Privacy Policy</h1>
+            
+            <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
+            
+            <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
+            
+            <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
+            
+            <div class="footer">
+                Last Updated: 2026 &copy; EosTest Dev Team
+            </div>
         </div>
-    </div>
+
+        <!-- 偷偷提示用户向下滑的微弱箭头 -->
+        <a href="#portal" class="scroll-hint">↓</a>
+    </section>
+
+    <!-- 第二屏：隐藏的门户入口（下滑才出现） -->
+    <section id="portal">
+        <div class="nav-buttons">
+            <a href="#products" class="btn">Products</a>
+            <a href="#about" class="btn">About Us</a>
+            <a href="#contact" class="btn">Contact</a>
+        </div>
+        <a href="#home" class="back-top" style="margin-top: 50px;">↑ Back to Privacy Policy</a>
+    </section>
+
+    <!-- 第三屏：产品介绍 -->
+    <section id="products">
+        <div class="card">
+            <h2>Products (In Development)</h2>
+            <p>We are currently building powerful, next-generation tools designed to make logic editing more intuitive, flexible, and robust.</p>
+            <p>Our focus is on delivering a seamless and highly efficient visual programming experience, empowering creators to build complex systems with ease. Stay tuned for more updates.</p>
+        </div>
+        <a href="#portal" class="back-top">↑ Back to Portal</a>
+    </section>
+
+    <!-- 第四屏：关于我们 -->
+    <section id="about">
+        <div class="card">
+            <h2>About Us</h2>
+            <p>We are an independent development team driven by a passion for creating exceptional tools and experiences.</p>
+            <p>If you are interested in our work, have any questions, or would like to collaborate, please feel free to reach out to us. We are always open to connecting with fellow creators.</p>
+        </div>
+        <a href="#portal" class="back-top">↑ Back to Portal</a>
+    </section>
+
+    <!-- 第五屏：联系我们 -->
+    <section id="contact">
+        <div class="card">
+            <h2>Contact</h2>
+            <p>If you have any questions about the project or want to join the playtest, feel free to contact us.</p>
+            <p><strong>Email:</strong> contact@fith.online</p>
+            <p><strong>Discord:</strong> EosTest_Dev#0001</p>
+        </div>
+        <a href="#portal" class="back-top">↑ Back to Portal</a>
+    </section>
 
 </body>
 </html>
