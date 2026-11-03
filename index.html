@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EosTest - Portal</title>
+    <title>EosTest - Privacy Policy</title>
     <style>
         /* 基础重置与全屏背景 */
         body, html {
             margin: 0;
             padding: 0;
-            min-height: 100%;
+            height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0d0d12;
             color: #e0e0e0;
-            scroll-behavior: smooth; /* 开启平滑滚动 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
-        /* 动态科技感背景（固定不随页面滚动） */
+        /* 动态科技感背景（缓慢移动的光晕） */
         .bg-glow {
-            position: fixed;
+            position: absolute;
             width: 600px;
             height: 600px;
             background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
@@ -28,7 +31,7 @@
             animation: moveGlow 10s infinite alternate ease-in-out;
         }
         .bg-glow-2 {
-            position: fixed;
+            position: absolute;
             width: 500px;
             height: 500px;
             background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
@@ -43,55 +46,39 @@
             100% { transform: translate(100px, 100px); }
         }
 
-        /* 页面内容容器 */
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding: 60px 0 40px 0;
-        }
-
-        /* 毛玻璃卡片通用样式 */
-        .card {
+        /* 毛玻璃卡片主体 */
+        .container {
             max-width: 650px;
             width: 90%;
-            background: rgba(20, 20, 25, 0.7);
+            background: rgba(20, 20, 25, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
             z-index: 1;
+            /* 入场动画 */
             animation: fadeUp 0.8s ease-out forwards;
             opacity: 0;
             transform: translateY(20px);
         }
 
-        /* 为不同卡片设置延迟，产生依次浮现的感觉 */
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.3s; }
-        .card:nth-child(3) { animation-delay: 0.5s; }
-        .card:nth-child(4) { animation-delay: 0.7s; }
-
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 标题样式 */
-        h1, h2 {
+        /* 霓虹标题 */
+        h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 15px;
-            margin-top: 0;
         }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.6rem; }
 
         /* 正文样式 */
         p {
@@ -101,12 +88,13 @@
             margin-bottom: 20px;
         }
 
+        /* 高亮文字 */
         .highlight {
             color: #00ffff;
             font-weight: bold;
         }
 
-        /* 状态角标 */
+        /* 极简状态角标 */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -118,6 +106,7 @@
             font-size: 0.85rem;
             margin-bottom: 30px;
         }
+
         .status-dot {
             width: 8px;
             height: 8px;
@@ -127,60 +116,21 @@
             box-shadow: 0 0 8px #00ffff;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
 
-        /* 导航按钮组 */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            margin-bottom: 40px;
-            width: 90%;
-            max-width: 650px;
-            z-index: 1;
-            animation: fadeUp 0.8s ease-out forwards;
-        }
-
-        .nav-btn {
-            flex: 1;
-            text-align: center;
-            padding: 15px 10px;
-            background: rgba(20, 20, 25, 0.6);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            color: #00ffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .nav-btn:hover {
-            background: rgba(0, 255, 255, 0.15);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-            transform: translateY(-2px);
-        }
-
         /* 页脚 */
-        .footer-text {
+        .footer {
+            margin-top: 40px;
             font-size: 0.85rem;
             color: #555;
             text-align: right;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
-            margin-top: 10px;
-        }
-        
-        /* 手机端适配 */
-        @media (max-width: 600px) {
-            .nav-buttons { flex-direction: column; gap: 10px; }
-            .card { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -190,56 +140,24 @@
     <div class="bg-glow"></div>
     <div class="bg-glow-2"></div>
 
-    <div class="main-wrapper">
+    <!-- 主内容区 -->
+    <div class="container">
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            System Online - EosTest
+        </div>
         
-        <!-- 第一块：隐私政策 (保持不变) -->
-        <div class="card">
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                System Online - EosTest
-            </div>
-            
-            <h1>Privacy Policy</h1>
-            
-            <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
-            
-            <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
-            
-            <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
-            
-            <div class="footer-text">
-                Last Updated: 2026 &copy; EosTest Dev Team
-            </div>
+        <h1>Privacy Policy</h1>
+        
+        <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
+        
+        <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
+        
+        <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
+        
+        <div class="footer">
+            Last Updated: 2026 &copy; EosTest Dev Team
         </div>
-
-        <!-- 导航按钮 -->
-        <div class="nav-buttons">
-            <a href="#product" class="nav-btn">Product</a>
-            <a href="#about" class="nav-btn">About Us</a>
-            <a href="#contact" class="nav-btn">Contact</a>
-        </div>
-
-        <!-- 第二块：产品介绍 -->
-        <div id="product" class="card">
-            <h2>Product</h2>
-            <p><span class="highlight">Status: In Development</span></p>
-            <p>Our current focus is on engineering a more powerful, intuitive, and streamlined logic editing architecture. We are dedicated to providing developers with a seamless and efficient workflow, pushing the boundaries of what's possible in visual scripting and system design.</p>
-        </div>
-
-        <!-- 第三块：关于我们 -->
-        <div id="about" class="card">
-            <h2>About Us</h2>
-            <p>We are a passionate team of independent developers driven by a shared vision for better development tools. Operating autonomously allows us to innovate freely and focus on what truly matters: building exceptional software.</p>
-            <p>If you share our enthusiasm for creating powerful tools and are interested in what we do, we would love to hear from you. Let's connect and build something great together.</p>
-        </div>
-
-        <!-- 第四块：联系我们 -->
-        <div id="contact" class="card">
-            <h2>Contact</h2>
-            <p>We are currently setting up our communication channels. <span class="highlight">Contact information will be available here soon.</span></p>
-            <p>Thank you for your patience and interest in our project.</p>
-        </div>
-
     </div>
 
 </body>
