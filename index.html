@@ -1,164 +1,139 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EosTest - Privacy Policy</title>
+    <title>EosTest - Privacy Policy & Info</title>
     <style>
-        /* 基础重置与全屏背景 */
+        /* --- Original Minimalist Layout Styles --- */
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d12;
-            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            scroll-behavior: smooth; /* Enables smooth scrolling for the buttons */
+        }
+
+        .privacy-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .privacy-section h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .privacy-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        /* --- New Navigation & Content Styles --- */
+        .nav-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        /* 动态科技感背景（缓慢移动的光晕） */
-        .bg-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
-            top: -100px;
-            left: -100px;
-            z-index: -1;
-            animation: moveGlow 10s infinite alternate ease-in-out;
-        }
-        .bg-glow-2 {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
-            bottom: -100px;
-            right: -100px;
-            z-index: -1;
-            animation: moveGlow 12s infinite alternate-reverse ease-in-out;
+        .nav-btn {
+            text-decoration: none;
+            color: #333;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        @keyframes moveGlow {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(100px, 100px); }
-        }
-
-        /* 毛玻璃卡片主体 */
-        .container {
-            max-width: 650px;
-            width: 90%;
-            background: rgba(20, 20, 25, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            /* 入场动画 */
-            animation: fadeUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* 霓虹标题 */
-        h1 {
-            font-size: 2.2rem;
-            margin-top: 0;
+        .nav-btn:hover {
+            background: #000;
             color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 15px;
+            border-color: #000;
         }
 
-        /* 正文样式 */
-        p {
-            line-height: 1.8;
-            color: #b0b0b8;
-            font-size: 1.05rem;
+        .content-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+            padding-bottom: 100px;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
             margin-bottom: 20px;
+            font-weight: 600;
+            color: #111;
         }
 
-        /* 高亮文字 */
-        .highlight {
-            color: #00ffff;
-            font-weight: bold;
-        }
-
-        /* 极简状态角标 */
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            color: #00ffff;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 30px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00ffff;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 8px #00ffff;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
-        }
-
-        /* 页脚 */
-        .footer {
-            margin-top: 40px;
-            font-size: 0.85rem;
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.6;
             color: #555;
-            text-align: right;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-text {
+            font-weight: 600;
+            color: #000;
         }
     </style>
 </head>
 <body>
 
-    <!-- 背景光晕 -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow-2"></div>
-
-    <!-- 主内容区 -->
-    <div class="container">
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            System Online - EosTest
-        </div>
-        
+    <!-- 1. Original Privacy Policy (Unchanged) -->
+    <section class="privacy-section" id="privacy">
         <h1>Privacy Policy</h1>
-        
-        <p>Welcome to the <span class="highlight">EosTest</span> network portal. This environment is strictly for internal development and testing purposes.</p>
-        
-        <p>We believe in absolute data minimalism. Our systems <span class="highlight">do not collect, store, or track any personal data</span>. No telemetry, no cookies, no user profiling. All network tests are anonymous.</p>
-        
-        <p>By accessing this endpoint, you acknowledge that this is a secure development environment and no user information is retained.</p>
-        
-        <div class="footer">
-            Last Updated: 2026 &copy; EosTest Dev Team
-        </div>
+        <p>This is a test app. We do not collect or store any personal data.</p>
+    </section>
+
+    <!-- 2. Navigation Buttons -->
+    <div class="nav-container">
+        <a href="#product" class="nav-btn">Product Info</a>
+        <a href="#about" class="nav-btn">About Us</a>
+        <a href="#contact" class="nav-btn">Contact</a>
     </div>
+
+    <!-- 3. Product Info -->
+    <section class="content-section" id="product">
+        <h2>Product Introduction</h2>
+        <p>🚧 <span class="highlight-text">Currently in Development</span></p>
+        <p>We are dedicated to building a more powerful and convenient logic editing environment. Our goal is to streamline the way you create, manage, and visualize complex logic systems, making the development process faster and more intuitive.</p>
+    </section>
+
+    <!-- 4. About Us -->
+    <section class="content-section" id="about">
+        <h2>About Us</h2>
+        <p>We are an independent development team driven by a passion for creating better tools for developers and creators.</p>
+        <p>If you are interested in what we are building, or if you'd like to collaborate, we would love to hear from you. Feel free to reach out!</p>
+    </section>
+
+    <!-- 5. Contact Us -->
+    <section class="content-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Stay tuned. Our contact information will be updated here soon.</p>
+        <!-- You can uncomment and add your email later like this: -->
+        <!-- <p>Email: <a href="mailto:contact@fith.online">contact@fith.online</a></p> -->
+    </section>
 
 </body>
 </html>
