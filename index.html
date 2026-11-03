@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* 动态呼吸光晕背景（让纯黑的背景不那么死板） */
+        /* 动态呼吸光晕背景 */
         .bg-glow {
             position: fixed;
             width: 600px;
@@ -55,11 +55,8 @@
             box-sizing: border-box;
         }
 
-        /* =========================================
-           第一屏：100% 纯粹的隐私政策（完美复刻最初版）
-           ========================================= */
         #home {
-            text-align: left; /* 回归最初版的左对齐 */
+            text-align: left;
         }
 
         /* 状态指示器居中放置 */
@@ -76,7 +73,7 @@
             background: rgba(0, 255, 255, 0.1);
             border: 1px solid rgba(0, 255, 255, 0.3);
             color: #00ffff;
-            padding: 6px 16px 6px 13px; 
+            padding: 6px 16px 6px 11px; 
             border-radius: 20px;
             font-size: 0.85rem;
             letter-spacing: 1px;
@@ -97,7 +94,7 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
 
-        /* 纯文本容器（不加卡片背景，完全还原最初版） */
+        /* 纯文本容器 */
         .privacy-content {
             max-width: 650px;
             width: 90%;
@@ -146,9 +143,6 @@
             60% { transform: translate(-50%, -5px); }
         }
 
-        /* =========================================
-           第二屏：隐藏的炫酷门户导航（下滑才看得到）
-           ========================================= */
         #portal {
             background: linear-gradient(180deg, #0d0d12 0%, #151520 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -182,9 +176,6 @@
             transform: translateY(-3px);
         }
 
-        /* =========================================
-           其他内容屏（产品、关于、联系）
-           ========================================= */
         .card {
             max-width: 800px;
             width: 90%;
@@ -251,41 +242,33 @@
             </div>
         </div>
 
-        <!-- 偷偷提示用户向下滑的微弱箭头 -->
         <a href="#portal" class="scroll-hint">↓</a>
     </section>
 
-    <!-- 第二屏：隐藏的门户入口（下滑才出现） -->
     <section id="portal">
         <div class="nav-buttons">
             <a href="#products" class="btn">Products</a>
             <a href="#about" class="btn">About Us</a>
             <a href="#contact" class="btn">Contact</a>
         </div>
-        <a href="#home" class="back-top" style="margin-top: 50px;">↑ Back to Privacy Policy</a>
     </section>
 
-    <!-- 第三屏：产品介绍 -->
     <section id="products">
         <div class="card">
             <h2>Products (In Development)</h2>
             <p>We are currently building powerful, next-generation tools designed to make logic editing more intuitive, flexible, and robust.</p>
             <p>Our focus is on delivering a seamless and highly efficient visual programming experience, empowering creators to build complex systems with ease. Stay tuned for more updates.</p>
         </div>
-        <a href="#portal" class="back-top">↑ Back to Portal</a>
     </section>
 
-    <!-- 第四屏：关于我们 -->
     <section id="about">
         <div class="card">
             <h2>About Us</h2>
             <p>We are an independent development team driven by a passion for creating exceptional tools and experiences.</p>
             <p>If you are interested in our work, have any questions, or would like to collaborate, please feel free to reach out to us. We are always open to connecting with fellow creators.</p>
         </div>
-        <a href="#portal" class="back-top">↑ Back to Portal</a>
     </section>
 
-    <!-- 第五屏：联系我们 -->
     <section id="contact">
         <div class="card">
             <h2>Contact</h2>
